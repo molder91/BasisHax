@@ -23,6 +23,9 @@
 - [x] Connected frontend to Rust backend via Tauri commands
 - [x] Added error handling and loading states
 
+### Fixes & Improvements
+- [x] Fixed Tauri 2.0 configuration issues with tray icons
+
 ## Current Implementation Features
 
 1. **WiFi Toggle**
