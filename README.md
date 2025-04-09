@@ -1,54 +1,124 @@
 # BasisHax
 
-A modern utility application for Mac and Windows that helps users quickly manage their computer visibility with customizable hotkeys.
+A modern, cross-platform utility for quickly switching contexts with hotkeys. Perfect for students and professionals who need to quickly change their screen state.
 
-## Overview
-
-BasisHax is designed for students and professionals who need to quickly switch contexts or maintain privacy. With customizable hotkeys, users can:
-
-- Toggle WiFi connection on/off instantly
-- Hide current applications completely (beyond just minimizing)
-- Combine actions to switch contexts with a single key press
+![BasisHax Logo](assets/logo.png) *(Logo placeholder)*
 
 ## Features
 
-### WiFi Toggle
-Instantly disable or enable your WiFi connection with a customizable hotkey.
+🔄 **WiFi Toggle** - Quickly enable/disable your WiFi connection with a customizable hotkey
 
-### Application Quick Hide
-Hide the current application completely - the window is closed, audio is muted, and the app won't appear in app switchers (Command+Tab/Alt+Tab).
+🔒 **Application Hiding** - Instantly hide your current application from view and taskswitchers
 
-### Combo Mode
-Combine WiFi toggling with switching to a predetermined application in full screen mode.
+⚡ **Context Switch** - Combine WiFi toggle and application switching in one smooth action
 
-## Status
+## Installation
 
-⚠️ **This project is currently in development** ⚠️
+### macOS
 
-Please refer to the [ROADMAP.md](./ROADMAP.md) for the current development status and upcoming features.
+1. Download the latest release from the [releases page](https://github.com/molder91/BasisHax/releases)
+2. Move BasisHax.app to your Applications folder
+3. Launch BasisHax
+4. Grant permissions when prompted (required for hotkey and network functionality)
 
-## Prerequisites
+### Windows
 
-- macOS 10.15 or higher / Windows 10 or higher
-- Administrative privileges (required for WiFi control)
+1. Download the latest release from the [releases page](https://github.com/molder91/BasisHax/releases)
+2. Run the installer and follow the prompts
+3. Launch BasisHax
+4. Grant permissions when prompted (administrator privileges may be required)
 
 ## Getting Started
 
-Installation instructions will be provided when the first release is available.
+1. **Setup Hotkeys** - Configure your preferred keyboard shortcuts
+2. **Safe Application** - Choose which application to launch during a context switch
+3. **Test** - Verify functionality works as expected
 
-## Contributing
+## Usage
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### WiFi Toggle
+
+Press your configured hotkey (default: `Alt+W`) to quickly toggle your WiFi connection on or off.
+
+### Application Hiding
+
+Press your configured hotkey (default: `Alt+H`) to instantly hide the current application. The application will be:
+- Hidden from view
+- Removed from Alt+Tab/Command+Tab switcher
+- Muted
+- Still running in the background
+
+To restore a hidden application, press the configured restoration hotkey (default: `Alt+Shift+H`).
+
+### Context Switch
+
+Press your configured hotkey (default: `Alt+Shift+S`) to:
+1. Disable WiFi connection
+2. Hide the current application
+3. Launch your pre-configured "safe" application in full screen
+
+## Configuration
+
+All settings can be accessed through the BasisHax preferences window:
+
+- **Hotkeys** - Customize all keyboard shortcuts
+- **Behavior** - Configure how features work
+- **Startup** - Set BasisHax to launch at system startup
+- **Notifications** - Enable/disable visual/sound feedback
+
+## Security and Privacy
+
+BasisHax values your privacy:
+- No data collection or telemetry
+- All configuration is stored locally
+- No internet connectivity required for core functionality
+- Minimal system permissions requested
+
+## Development
+
+BasisHax is built with Electron, React, and TypeScript. See the [contributing guide](CONTRIBUTING.md) for more information on development.
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+- Git
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/molder91/BasisHax.git
+cd BasisHax
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Building
+
+```bash
+# Build for current platform
+npm run build
+
+# Build for all platforms
+npm run build:all
+```
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## Support
 
-- This project is inspired by the need for quick context switching in professional and educational environments
-- Special thanks to all contributors
+If you encounter any issues or have questions, please [open an issue](https://github.com/molder91/BasisHax/issues/new) on GitHub.
 
-## Contact
+## Acknowledgements
 
-GitHub Issues is the preferred channel for bug reports, feature requests, and submitting pull requests. 
+- [Electron](https://www.electronjs.org/)
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/) 

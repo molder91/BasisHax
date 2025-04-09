@@ -1,138 +1,110 @@
 # BasisHax Development Roadmap
 
 ## Project Overview
-BasisHax is a utility software designed for Mac and Windows that provides quick hotkey functions to help users evade detection while using their computers. The application features a modern, minimalistic, and clean GUI.
+BasisHax is a utility software for Mac and Windows that helps users quickly switch contexts with customizable hotkeys. The primary use case is to help students and workers quickly hide their current activities when needed.
 
 ## Core Features
-1. **WiFi Toggle Hotkey**
-   - User-customizable hotkey to quickly disable/enable WiFi connection
-   
-2. **Quick Application Hide**
-   - User-customizable hotkey to instantly "close" the current application
-   - Note: "Closing" means the application window is hidden, muted, and not accessible via app switcher (cmd+tab/alt+tab) until a custom hotkey is pressed
-   
-3. **Combo Mode**
-   - User-customizable hotkey to disable WiFi and switch to a pre-selected application in full-screen mode
+1. **WiFi Toggle Hotkey** - Enable/disable WiFi with a customizable hotkey
+2. **Application Hiding Hotkey** - Hide current application with a customizable hotkey
+3. **Context Switch Hotkey** - Combine WiFi toggle and application switch with a customizable hotkey
+
+## UI/UX Design Principles
+- Modern, minimalistic, and clean interface
+- Intuitive hotkey configuration
+- Cross-platform consistency (Mac and Windows)
 
 ## Development Phases
 
-### Phase 1: Research & Setup (Week 1)
-- [x] Define project requirements and features
-- [x] Research platform-specific APIs for controlling WiFi on Mac and Windows
-- [x] Research methods for controlling application visibility on both platforms
-- [x] Select appropriate cross-platform technologies
-- [x] Set up development environment
-- [x] Create GitHub repository structure
-- [x] Create initial project structure
+### Phase 1: Project Setup and Core Architecture
+- [x] Create project repository
+- [ ] Set up cross-platform development environment
+- [ ] Design system architecture
+- [ ] Implement basic UI framework
+- [ ] Set up CI/CD pipeline with GitHub Actions
 
-### Phase 2: Core Functionality Development (Weeks 2-4)
-- [x] Develop WiFi control module
-  - [x] Mac implementation
-  - [x] Windows implementation
-  - [ ] Testing across different devices and OS versions
-- [x] Develop application control module
-  - [x] Implement window hiding mechanism
-  - [x] Implement audio muting
-  - [x] Prevent app from appearing in app switcher
-  - [x] Create custom recall mechanism
-  - [ ] Testing across different applications and scenarios
-- [x] Develop hotkey management system
-  - [x] Global hotkey registration
-  - [x] Hotkey customization interface
-  - [ ] Hotkey conflict resolution
-  - [x] Persistence of hotkey settings
+### Phase 2: Core Functionality Implementation
+- [ ] Implement WiFi control module
+  - [ ] Mac implementation
+  - [ ] Windows implementation
+- [ ] Implement application control module
+  - [ ] Application hiding functionality
+  - [ ] Application launching functionality
+- [ ] Implement global hotkey system
+  - [ ] Hotkey registration
+  - [ ] Hotkey conflict detection and resolution
 
-### Phase 3: GUI Development (Weeks 5-6)
-- [x] Design UI wireframes
-- [x] Create modern, minimalistic UI components
-- [x] Implement main settings interface
-- [x] Implement hotkey configuration screens
-- [x] Implement application selector for combo mode
-- [ ] Create system tray/menu bar integration
-- [x] Implement user preferences storage
+### Phase 3: User Interface Development
+- [ ] Design and implement main application window
+- [ ] Create hotkey configuration interface
+- [ ] Implement settings storage and retrieval
+- [ ] Design system tray/menu bar integration
+- [ ] Implement application selector for context switching
 
-### Phase 4: Integration & Testing (Weeks 7-8)
-- [ ] Integrate all modules
-- [ ] Implement application state management
-- [ ] Create startup and background process management
-- [ ] Perform comprehensive testing on Mac platforms
-  - [ ] macOS Ventura
-  - [ ] macOS Monterey
-  - [ ] macOS Big Sur
-- [ ] Perform comprehensive testing on Windows platforms
-  - [ ] Windows 11
-  - [ ] Windows 10
-- [ ] Bug fixing and performance optimization
+### Phase 4: Feature Integration and Testing
+- [ ] Integrate WiFi module with hotkey system
+- [ ] Integrate application control module with hotkey system
+- [ ] Implement combined context switching feature
+- [ ] Add startup configuration options
+- [ ] Comprehensive testing on both platforms
+  - [ ] Functionality testing
+  - [ ] Performance testing
+  - [ ] Edge case handling
 
-### Phase 5: Packaging & Deployment (Week 9)
-- [ ] Create installers for Mac and Windows
-- [ ] Implement auto-update mechanism
-- [ ] Prepare documentation
+### Phase 5: Refinement and Launch Preparation
+- [ ] Optimize performance
+- [ ] Refine user interface
+- [ ] Add final polish to user experience
+- [ ] Create documentation
   - [ ] User manual
   - [ ] Installation guide
-  - [ ] Troubleshooting guide
-- [ ] Finalize GitHub repository
-- [ ] Release v1.0.0
+  - [ ] FAQ
+- [ ] Prepare for initial release
 
-### Phase 6: Future Enhancements (Post-Release)
-- [ ] Add support for additional platforms (Linux)
-- [ ] Implement more advanced application control features
-- [ ] Add scheduled activation/deactivation
-- [ ] Introduce profiles for different scenarios
-- [ ] Add network monitoring features
-- [ ] Implement advanced customization options
+### Phase 6: Post-Launch and Future Development
+- [ ] Gather user feedback
+- [ ] Implement priority bug fixes and improvements
+- [ ] Consider additional features:
+  - [ ] Profile system for different context scenarios
+  - [ ] Advanced scheduling options
+  - [ ] Additional automation features
 
-## Technical Stack
+## Technical Architecture
 
-### Selected Technologies
-- **Cross-Platform Framework**: Tauri 2.0
-- **Programming Languages**: Rust for backend, TypeScript for frontend
-- **UI Framework**: React
-- **Styling**: TailwindCSS for modern, clean interface
-- **Packaging**: Tauri Bundler
+### Frontend
+- Cross-platform UI framework (Electron with React/TypeScript)
+- TailwindCSS for styling
+- Context API for state management
 
-### Platform-Specific Technologies
-- **macOS**: AppleScript, Command-line utilities for system integration
-- **Windows**: PowerShell, WinAPI for system control
+### Backend
+- Node.js for cross-platform compatibility
+- Native modules for system-level interactions:
+  - Network interface control
+  - Process management
+  - Global hotkey registration
 
-## Development Approach
-1. Modular architecture with clear separation of concerns
-2. Platform-specific implementations with common interfaces
-3. Comprehensive testing on all supported platforms
-4. Regular commits to GitHub with descriptive messages
-5. Continuous integration for build validation
+### Data Storage
+- Local configuration files
+- Secure storage for sensitive settings
 
-## Risk Factors & Mitigation
-- **System Permission Requirements**: Will require elevated permissions for WiFi control and application management
-  - Mitigation: Clear documentation and secure permission requesting
-- **OS Version Compatibility**: Different OS versions may require different approaches
-  - Mitigation: Version detection and adaptive implementation
-- **Security Considerations**: Ensure application cannot be misused
-  - Mitigation: Implement responsible usage policies
-- **Tauri 2.0 Compatibility**: Tauri 2.0 has different feature flags and configuration requirements
-  - Mitigation: Stay updated with Tauri 2.0 documentation and make necessary adjustments
+## Development Standards
+- TypeScript for type safety
+- ESLint and Prettier for code quality
+- Jest for testing
+- Semantic versioning
+- Comprehensive documentation
 
-## Contribution Guidelines
-- Follow established coding standards
-- Maintain comprehensive documentation
-- Create detailed pull requests
-- Test on multiple platforms before submitting
+## Deployment Strategy
+- GitHub repository for version control
+- GitHub Actions for CI/CD
+- Release management through GitHub Releases
+- Installer packages for both Mac and Windows
 
-## Project Tracking
-Progress will be tracked on GitHub with the following labels:
-- Feature
-- Bug
-- Enhancement
-- Documentation
-- Testing
+## Milestones and Timeline
+1. **Project Setup and Planning** - Week 1
+2. **Core Functionality Implementation** - Weeks 2-4
+3. **UI Development** - Weeks 5-6
+4. **Integration and Testing** - Weeks 7-8
+5. **Refinement and Documentation** - Weeks 9-10
+6. **Initial Release** - End of Week 10
 
-## Regular Reviews
-- Weekly code reviews
-- Bi-weekly milestone assessments
-- Monthly roadmap alignment
-
-## Version Compatibility Notes
-- **Tauri 2.0**: The project uses Tauri 2.0 which has different configurations than Tauri 1.0
-  - The `shell-open` feature flag is no longer available in Tauri 2.0 core, use the shell plugin instead
-  - System tray configuration requires the `tray-icon` feature flag
-  - Consult the [Tauri 2.0 documentation](https://v2.tauri.app/) for the latest changes 
+This roadmap will be regularly reviewed and updated throughout the development process to ensure alignment with project goals and requirements. 
