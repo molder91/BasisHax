@@ -25,6 +25,7 @@
 
 ### Fixes & Improvements
 - [x] Fixed Tauri 2.0 configuration issues with tray icons
+- [x] Fixed Tauri 2.0 feature flag compatibility issue (`shell-open` is no longer available)
 
 ## Current Implementation Features
 
@@ -106,6 +107,7 @@ Note: WiFi control and application hiding may require elevated permissions depen
 1. Hotkey detection in the configuration modal is not fully implemented (manual editing only)
 2. WiFi control may require specific permissions on some systems
 3. Application hiding might not work with all applications, particularly those with special window management
+4. Tauri 2.0 compatibility requires attention to feature flags and configuration differences
 
 ## Contribution Areas
 
@@ -114,4 +116,22 @@ If you'd like to contribute, these areas would be most helpful:
 - Enhancing the application hiding functionality
 - Testing on different OS versions
 - Improving UI/UX design
-- Adding system tray integration 
+- Adding system tray integration
+
+## Tauri 2.0 Compatibility Notes
+
+The project uses Tauri 2.0, which has several important differences from Tauri 1.0:
+
+1. **Feature Flags**: Some feature flags have been moved to plugins or renamed
+   - `shell-open` feature is no longer available in the core package
+   - Use the appropriate plugin instead (e.g., `tauri-plugin-shell`)
+
+2. **Configuration**: The configuration format has been updated
+   - System tray is now configured using the `trayIcon` property
+   - The `systemTray` property is no longer used
+
+3. **Plugin System**: Tauri 2.0 has a new plugin system
+   - Plugins are now separate packages with their own feature flags
+   - Make sure to include the appropriate plugins for needed functionality
+
+For more information, refer to the [Tauri 2.0 documentation](https://v2.tauri.app/) 

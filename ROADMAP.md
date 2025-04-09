@@ -18,38 +18,38 @@ BasisHax is a utility software designed for Mac and Windows that provides quick 
 
 ### Phase 1: Research & Setup (Week 1)
 - [x] Define project requirements and features
-- [ ] Research platform-specific APIs for controlling WiFi on Mac and Windows
-- [ ] Research methods for controlling application visibility on both platforms
-- [ ] Select appropriate cross-platform technologies
-- [ ] Set up development environment
-- [ ] Create GitHub repository structure
-- [ ] Create initial project structure
+- [x] Research platform-specific APIs for controlling WiFi on Mac and Windows
+- [x] Research methods for controlling application visibility on both platforms
+- [x] Select appropriate cross-platform technologies
+- [x] Set up development environment
+- [x] Create GitHub repository structure
+- [x] Create initial project structure
 
 ### Phase 2: Core Functionality Development (Weeks 2-4)
-- [ ] Develop WiFi control module
-  - [ ] Mac implementation
-  - [ ] Windows implementation
+- [x] Develop WiFi control module
+  - [x] Mac implementation
+  - [x] Windows implementation
   - [ ] Testing across different devices and OS versions
-- [ ] Develop application control module
-  - [ ] Implement window hiding mechanism
-  - [ ] Implement audio muting
-  - [ ] Prevent app from appearing in app switcher
-  - [ ] Create custom recall mechanism
+- [x] Develop application control module
+  - [x] Implement window hiding mechanism
+  - [x] Implement audio muting
+  - [x] Prevent app from appearing in app switcher
+  - [x] Create custom recall mechanism
   - [ ] Testing across different applications and scenarios
-- [ ] Develop hotkey management system
-  - [ ] Global hotkey registration
-  - [ ] Hotkey customization interface
+- [x] Develop hotkey management system
+  - [x] Global hotkey registration
+  - [x] Hotkey customization interface
   - [ ] Hotkey conflict resolution
-  - [ ] Persistence of hotkey settings
+  - [x] Persistence of hotkey settings
 
 ### Phase 3: GUI Development (Weeks 5-6)
-- [ ] Design UI wireframes
-- [ ] Create modern, minimalistic UI components
-- [ ] Implement main settings interface
-- [ ] Implement hotkey configuration screens
-- [ ] Implement application selector for combo mode
+- [x] Design UI wireframes
+- [x] Create modern, minimalistic UI components
+- [x] Implement main settings interface
+- [x] Implement hotkey configuration screens
+- [x] Implement application selector for combo mode
 - [ ] Create system tray/menu bar integration
-- [ ] Implement user preferences storage
+- [x] Implement user preferences storage
 
 ### Phase 4: Integration & Testing (Weeks 7-8)
 - [ ] Integrate all modules
@@ -84,15 +84,15 @@ BasisHax is a utility software designed for Mac and Windows that provides quick 
 
 ## Technical Stack
 
-### Potential Technologies
-- **Cross-Platform Framework**: Electron, Tauri, or Qt
-- **Programming Languages**: JavaScript/TypeScript with Node.js, Python, or C++
-- **UI Framework**: React, Vue, or native UI frameworks
+### Selected Technologies
+- **Cross-Platform Framework**: Tauri 2.0
+- **Programming Languages**: Rust for backend, TypeScript for frontend
+- **UI Framework**: React
 - **Styling**: TailwindCSS for modern, clean interface
-- **Packaging**: Electron Builder, Tauri Bundler, or platform-specific packagers
+- **Packaging**: Tauri Bundler
 
 ### Platform-Specific Technologies
-- **macOS**: AppleScript, Swift/Objective-C for deep system integration
+- **macOS**: AppleScript, Command-line utilities for system integration
 - **Windows**: PowerShell, WinAPI for system control
 
 ## Development Approach
@@ -109,6 +109,8 @@ BasisHax is a utility software designed for Mac and Windows that provides quick 
   - Mitigation: Version detection and adaptive implementation
 - **Security Considerations**: Ensure application cannot be misused
   - Mitigation: Implement responsible usage policies
+- **Tauri 2.0 Compatibility**: Tauri 2.0 has different feature flags and configuration requirements
+  - Mitigation: Stay updated with Tauri 2.0 documentation and make necessary adjustments
 
 ## Contribution Guidelines
 - Follow established coding standards
@@ -127,4 +129,10 @@ Progress will be tracked on GitHub with the following labels:
 ## Regular Reviews
 - Weekly code reviews
 - Bi-weekly milestone assessments
-- Monthly roadmap alignment 
+- Monthly roadmap alignment
+
+## Version Compatibility Notes
+- **Tauri 2.0**: The project uses Tauri 2.0 which has different configurations than Tauri 1.0
+  - The `shell-open` feature flag is no longer available in Tauri 2.0 core, use the shell plugin instead
+  - System tray configuration requires the `tray-icon` feature flag
+  - Consult the [Tauri 2.0 documentation](https://v2.tauri.app/) for the latest changes 
